@@ -12,7 +12,7 @@ This is a .NET project that uses Docker and Docker Compose for development and d
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/rodrigue1507/AssuranceAuto.git
 
 2. Navigate to the project directory:
 cd Assurance.Auto
