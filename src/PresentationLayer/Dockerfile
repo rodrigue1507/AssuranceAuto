@@ -9,10 +9,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["PresentationLayer/PresentationLayer.csproj", "PresentationLayer/"]
-COPY ["ApplicationLayer/ApplicationLayer.csproj", "ApplicationLayer/"]
-COPY ["DomainLayer/DomainLayer.csproj", "DomainLayer/"]
-COPY ["InfrastructureLayer/InfrastructureLayer.csproj", "InfrastructureLayer/"]
+COPY ["src/PresentationLayer/PresentationLayer.csproj", "PresentationLayer/"]
+COPY ["src/ApplicationLayer/ApplicationLayer.csproj", "ApplicationLayer/"]
+COPY ["src/DomainLayer/DomainLayer.csproj", "DomainLayer/"]
+COPY ["src/InfrastructureLayer/InfrastructureLayer.csproj", "InfrastructureLayer/"]
 RUN dotnet restore "./PresentationLayer/./PresentationLayer.csproj"
 COPY . .
 WORKDIR "/src/PresentationLayer"

@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  sqldbtests:
+    container_name: assurance-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - User ID=sa
+      - SA_PASSWORD=Test@Cellenza
+    ports:
+      - "5533:1433"
+  presentationlayer:
+    image: ${DOCKER_REGISTRY-}presentationlayer
+    build:
+      context: .
+      dockerfile: src/PresentationLayer/Dockerfile
